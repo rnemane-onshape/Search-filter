@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="./script1.js"></script>
+    <link rel="stylesheet" href="./Styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div ng-app="myModule">
+        <div ng-controller="myController">
+        <div class="container">
+            <input type="text" ng-model="text" placeholder="Search items here.." size=60>
+            <br><br>
+            <table class="table">
+                <tbody>
+                    <tr ng-repeat="item in items|filter:text" size=60>
+                        <td>
+                            <img ng-src="{{item.imageUrl}}" alt="" class="image">
+                            {{item.img}}
+                        </td>
+                        <td>
+                            {{item.info}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+</body>
+</html>
